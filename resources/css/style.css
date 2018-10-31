@@ -29,7 +29,6 @@ header {
   padding-top: 0.66rem;
   padding-bottom: 0.66rem;
   align-items: center;
-  border: 1px solid red;
 }
 .logo-img {
   display: flex;
@@ -54,95 +53,101 @@ header {
 /*main-banner section*/
 .main-banner {
   display: flex;
-  width: 100%;
-  height: 25rem;
   background-image: url("../images/moto.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  width: 100%;
+  height: 25rem;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+  flex-direction: column;
+
 }
 .banner-cont {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: flex-start;
-  width: 25rem;
+  width: 960px;
+  height: 25rem;
 
-  margin-top: 9rem;
-  margin-bottom: 4.5rem;
-  background-color: black;
-  border: 1px solid red;
 }
+ .content {
+   display: flex;
+   flex-direction: column;
+   width: 25rem;
+   margin-top: 9rem;
+   margin-bottom: 4.5rem;
+   background-color: black;
+ }
 
-.banner-cont .h3 {
+#h3 {
   display: flex;
   font-size: 1rem;
   font-weight: bold;
   margin-top: 2rem;
   margin-left: 3rem;
 }
-.banner-cont .h1 {
+#h1 {
   display: flex;
   font-size: 2rem;
   font-weight: bold;
   margin-left: 3rem;
   margin-top: 0.25rem;
 }
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  font-size: 1rem;
-  font-weight: bold;
-  border: 1px solid black;
-  background-color: firebrick;
-  width: 100%;
-}
-nav span {
-  display: inline-block;
-  padding-right: 94px;
-  align-self: center;
-  align-items: center;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
+
+  .nav {
+    background-color: firebrick;
+    color: white;
+    width: 100%;
+    font-family: Helvetica;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .nav ul {
+    display: flex;
+    width: 960px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    margin:  0 auto;
+  }
 
 /*photo-grid container*/
-
-.container {
+.photo-grid-container {
   display: flex;
-  border: 1px solid purple;
+  width: 960px;
+  margin: 0 auto;
+  justify-content: space-between;
 }
-
 .photo-grid {
   display: flex;
-  align-items: center;
-  margin: 0 auto;
   width: 30%;
   border: 4px solid black;
   margin-top: 3rem;
   margin-bottom: 3rem;
   flex-direction: column;
-
-
 }
-.pen-img, .watch-img,
-.glasses-img {
+.photo-grid-img {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
   height: 9rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  border: 1px solid red;
-  padding-left: 60px;
 }
-.pen, .watch, .glasses {
+.photo-grid-cont {
   display: flex;
   width: 100%;
   background-color: black;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   justify-content: center;
+  font-family: Helvetica;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
 }
 .resize {
   max-width: 150px;
@@ -154,7 +159,6 @@ nav span {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: 1px solid black;
   margin: 0 auto;
   margin-bottom: 4rem;
   width: 960px;
@@ -165,13 +169,11 @@ nav span {
   display: flex;
   width: 35%;
   flex-direction: column;
-  border: 1px solid red;
 }
 .hour-container {
   display: flex;
   width: 35%;
   flex-direction: column;
-  border: 1px solid red;
 }
 .location, .hour {
   display: flex;
@@ -187,13 +189,12 @@ nav span {
 .footer {
   width: 100%;
   height: 5rem;
-
   text-align: left;
-  border: 1px solid purple;
   background-color: black;
   color: white;
 }
 .copyright {
+  display: flex;
   width: 960px;
   font-weight: bold;
   text-align: left;
@@ -202,5 +203,72 @@ nav span {
   padding-bottom: 2rem;
   font-family: Helvetica;
   font-size: 1rem;
-  border: 1px solid white;
+}
+
+@media only screen and (max-width: 470px) {
+  .main-banner {
+    height: 15rem;
+  }
+
+  .headline {
+    width: 100%;
+    padding: 1rem 2rem;
+    top: 10rem;
+  }
+
+  .headline h4 {
+    font-size: .77rem;
+  }
+
+  .headline h1 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  nav ul {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .product {
+    width: 47%;
+  }
+
+  .product.glasses {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .products,
+  .business-info {
+    flex-wrap: wrap;
+  }
+
+  .product {
+    width: 90%;
+    margin: auto;
+  }
+
+  .product.watch {
+    display: none;
+  }
+
+  .info {
+    width: 90%;
+    margin: 0.5rem auto;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  footer {
+    text-align: center;
+  }
 }
